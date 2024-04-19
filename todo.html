@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html,body{
+            height: 100%;
+            width: 100%;
+
+        }
+        #div1{
+            display: flex;
+            
+            justify-content: space-around;
+            
+
+        }
+        h1,h3{
+            margin-top: 5%;
+        }
+        form{
+            margin-top: 10%;
+            height: 80%;
+            width: 30%;
+            border-radius: 2%;
+            background-color: whitesmoke;
+            border-radius: solid #000 2px;
+            padding: 0.5%;
+
+        }
+        #b1{
+            font-size: 150%;
+            width: 200%;
+            padding: 10%;
+            position: relative;
+            top: 50%;
+            right: 30%;
+            cursor: pointer;
+        }
+        #i1{
+            padding: 1%;
+            text-align: center;
+            cursor: pointer;
+            font-size: 100%;
+            cursor: pointer;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="div2"><form action="/addtask" method="get">
+
+
+        <input type="number" name="T_id" required>
+        
+
+
+        <input type="text" name="T_name" required >
+    
+
+
+        <input type="text" name="T_description" required>
+    
+
+        <input id="i1" type="submit" value="ADD TASK">
+    </form>
+
+    <br><br><br>
+    <br><br><br>
+
+    <a href="/seealltask"><button id="b1"> SEE ALL TASK </button></a>
+
+    <br><br><br>
+    <br><br><br>
+
+
+</div>
+
+
+</body>
+</html>

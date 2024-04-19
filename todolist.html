@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html,body{
+            height: 100%;
+            width: 100%;
+        }
+        #table2,#table2 td,#table2 th,#table2 tr{
+            background-color: aliceblue;
+            border: 2px solid salmon;
+            font-size: 160%;
+        }
+        #table2 #delete{
+            display: none;
+        }
+         #i2{
+            width: 100%;
+            font-size: 500%;
+            background-color: darkred;
+            cursor: pointer;
+            color: #fff;
+            
+
+        }
+
+        #table1,#table1 td,#table1 th,#table1 tr{
+            border: 1px double black;
+            
+         
+        }
+        #form1 input{
+            font-size: 200%;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <form id="form1" action="/addtask" method="get">
+            <h1> ADD list</h1>
+
+
+            <table id="table1">
+                <tr>
+                    <th>ENTER ID</th>
+                    <th>ENTER NAME</th>
+                    <th>ENTER DESCRIPTION</th>
+                </tr>
+                <tr>
+                    <td><input type="number" name="T_id" required ></td>
+                    <td><input type="text" name="T_name" required ></td>
+                    <td><input type="text" name="T_description" required></td>
+                    <td><input id="i1" type="submit" value="ADD TASK"></td>
+                 </tr>
+            </table>
+        </form>
+    </nav>
+
+    <div id="div1">
+    <table id="table2">
+        <tr>
+            <th>T_id</th>
+            <th>T_name</th>
+            <th>T_description</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+        {% for i in data %}
+        <tr>
+            <td>{{ i.T_id }}</td>
+            <td>{{ i.T_name }}</td>
+            <td>{{ i.T_description }}</td>
+            <td><button> </button></td>
+            <td><button>
+                <form  action="/deletetask">
+                    <input id="delete" type="number" name="dT_id" value="{{ i.T_id }}" >
+                    <input id="i2" type="submit" value="Delete">
+                </form>
+            </button></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
